@@ -10,7 +10,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Criar pagina com abas</title>
+		<title>Avaliação de Propriedade Rural</title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	<style>
@@ -66,9 +66,9 @@ th, td {
 				}
 			?>
 			 <ul class="nav nav-tabs" role="tablist">
-				<li role="presentation" class="active"><a href="#anexo1" aria-controls="anexo1" role="tab" data-toggle="tab">Anexo 1 - CARACTERIZAÇÃO DO SISTEMA DE PRODUÇÃO</a></li>
-				<li role="presentation"><a href="#atividade" aria-controls="atividade" role="tab" data-toggle="tab">Anexo 2 - QUESTIONÁRIO PARA A MENSURAÇÃO DA COMPETITIVIDADE NA BOVINOCULTURA DE CRIA</a></li>
-				
+				<li role="presentation" class="active"><a href="#dados_pessoais" aria-controls="home" role="tab" data-toggle="tab">Anexo 1 - CARACTERIZAÇÃO DO SISTEMA DE PRODUÇÃO</a></li>
+ +				<li role="presentation"><a href="#anexo2" aria-controls="anexo2" role="tab" data-toggle="tab">Anexo 2 - QUESTIONÁRIO PARA A MENSURAÇÃO DA COMPETITIVIDADE NA BOVINOCULTURA DE CRIA</a></li>
+  				
 			  </ul>
 			<br>
 			<br>
