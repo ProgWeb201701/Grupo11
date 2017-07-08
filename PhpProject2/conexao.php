@@ -1,9 +1,9 @@
 <?php
 	$servidor = "localhost";
 	$usuario = "root";
-	$senha = "";
-	$nomedb = "bd";
+	$senha = "123";
+	$dbname = "rural";
 	
 	//Criar a conexão
-	$conn = mysqli_connect($servidor, $usuario, $senha, $nomedb);
+	$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
 ?>
