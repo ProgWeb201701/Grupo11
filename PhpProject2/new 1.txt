@@ -1,0 +1,65 @@
+if($_SERVER['REQUEST_METHOD']=='POST'){
+					$request = md5(implode($_POST));
+					if(isset($_SESSION['ultima_request']) && $_SESSION['ultima_request'] == $request){
+						echo "Propriedade já foi inserido";
+					}else{	
+						$_SESSION['ultima_request'] = $request;
+						$nome = $_POST['nome'];
+						$nomep = $_POST['nomep'];
+						$celular = $_POST['celular'];
+						$email = $_POST['email'];
+						$endereco = $_POST['endereco'];
+						$enderecoc = $_POST['enderecoc'];
+						$municipio = $_POST['municipio'];
+						$tipo = $_POST['tipo'];
+						$obs = $_POST['obs'];
+						$total = $_POST['total'];
+
+						$_SESSION['nome'] = $nome;
+						$_SESSION['nomep'] = $nomep;
+						$_SESSION['celular'] = $celular;
+						$_SESSION['email'] = $email;
+						$_SESSION['endereco'] = $endereco;
+						$_SESSION['enderecoc'] = $enderecoc;	
+						$_SESSION['municipio'] = $municipio;
+						$_SESSION['tipo'] = $tipo;
+						$_SESSION['obs'] = $obs;	
+						$_SESSION['total'] = $total;
+												
+						$result_dados_pessoais = "INSERT INTO usuarios (nome, nomep, celular, email, endereco, enderecoc, municipio, tipo, obs, total) VALUES ('$nome', '$nomep', '$celular', '$email', '$endereco', '$enderecoc', '$municipio', '$tipo', '$obs', '$total')";
+						$resultado_dados_pessoais= mysqli_query($conn, $result_dados_pessoais);
+						
+						//ID do usuario inserido
+						$ultimo_id = mysqli_insert_id($conn);	
+						echo $ultimo_id;
+					}
+				}
+				
+				
+				
+				$_SESSION['nome'] = $_POST['nome'];
+		$_SESSION['nomep'] = $_POST['nomep'];
+		$_SESSION['celular'] = $_POST['celular'];
+		$_SESSION['email'] = $_POST['email'];
+		$_SESSION['endereco'] = $_POST['endereco'];
+		$_SESSION['enderecoc'] = $_POST['enderecoc'];
+		$_SESSION['municipio'] = $_POST['municipio'];
+		$_SESSION['tipo'] = $_POST['tipo'];
+		$_SESSION['obs'] = $_POST['obs'];
+		$_SESSION['total'] = $_POST['total'];
+		
+	
+	$nome = mysqli_real_escape_string($conn, $_POST['nome']);
+	$nomep = mysqli_real_escape_string($conn, $_POST['nomep']);
+	$celular = mysqli_real_escape_string($conn, $_POST['celular']);
+	$email = mysqli_real_escape_string($conn, $_POST['email']);
+	$endereco = mysqli_real_escape_string($conn, $_POST['endereco']);
+	$enderecoc = mysqli_real_escape_string($conn, $_POST['enderecoc']);
+	$municipio = mysqli_real_escape_string($conn, $_POST['municipio']);
+	$tipo = mysqli_real_escape_string($conn, $_POST['tipo']);
+	$obs = mysqli_real_escape_string($conn, $_POST['obs']);
+	$total = mysqli_real_escape_string($conn, $_POST['total']);
+	
+	
+	$result_dados_pessoais = "INSERT INTO usuarios (nome, nomep, celular, email, endereco, enderecoc, municipio, tipo, obs, total, created) VALUES ('$nome', '$nomep', '$celular', '$email', '$endereco', '$enderecoc', '$municipio', '$tipo', '$obs', '$total',  NOW())";
+						$resultado_dados_pessoais= mysqli_query($conn, $result_dados_pessoais)
